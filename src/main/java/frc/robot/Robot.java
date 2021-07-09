@@ -74,7 +74,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during teleoperated mode. */
   @Override
   public void teleopPeriodic() {
-    m_robotDrive.arcadeDrive(m_GamePad.getTriggerAxis(GenericHID.Hand.kRight) - m_GamePad.getTriggerAxis(GenericHID.Hand.kLeft), m_GamePad.getX(GenericHID.Hand.kLeft));
+    m_robotDrive.arcadeDrive((m_GamePad.getTriggerAxis(GenericHID.Hand.kRight) - m_GamePad.getTriggerAxis(GenericHID.Hand.kLeft)) /2, m_GamePad.getX(GenericHID.Hand.kLeft)/2);
   }
 
   /** This function is called once each time the robot enters test mode. */
