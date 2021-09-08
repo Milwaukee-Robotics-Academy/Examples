@@ -41,8 +41,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    m_LeftMotors.setInverted(true);
-    m_RightMotors.setInverted(false);
+    m_RightMotors.setInverted(true);
     m_robotDrive.setRightSideInverted(false);
   }
 
@@ -74,7 +73,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during teleoperated mode. */
   @Override
   public void teleopPeriodic() {
-    m_robotDrive.arcadeDrive((m_GamePad.getTriggerAxis(GenericHID.Hand.kRight) - m_GamePad.getTriggerAxis(GenericHID.Hand.kLeft)) /2, m_GamePad.getX(GenericHID.Hand.kLeft)/2);
+    m_robotDrive.arcadeDrive((m_GamePad.getTriggerAxis(GenericHID.Hand.kRight) - m_GamePad.getTriggerAxis(GenericHID.Hand.kLeft)), m_GamePad.getX(GenericHID.Hand.kLeft));
   }
 
   /** This function is called once each time the robot enters test mode. */
